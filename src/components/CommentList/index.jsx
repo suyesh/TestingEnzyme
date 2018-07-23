@@ -1,10 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux'
 
 class CommentList extends Component {
 
+  renderComments() {
+    return this.props.comments.map(comment => {
+      return <li key={comment}>{comment}</li>
+    });
+  }
+
   render(){
-    return(<div>{ this.props.comments.map(comment => <div key={comment}>{ comment }</div>)}</div>)
+    return(
+      <Fragment>
+        <ul>
+          {this.renderComments()}
+        </ul>
+      </Fragment>
+    );
   }
 }
 
