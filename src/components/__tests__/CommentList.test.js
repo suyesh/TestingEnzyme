@@ -17,7 +17,6 @@ beforeEach(() => {
   );
 });
 
-
 it('create one <li> per comment', () => {
   const { comments } = initialState
   expect(component.find('li').length).toEqual(comments.length)

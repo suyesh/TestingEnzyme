@@ -22,7 +22,6 @@ it('has a text area and a button', () => {
   expect(component.find('button').length).toEqual(2)
 });
 
-
 describe('The text area', () => {
   beforeEach(() => {
     component.find('textarea').simulate('change', {
@@ -30,7 +29,6 @@ describe('The text area', () => {
     });
     component.update();
   });
-
 
   it('has a text area that users can type in', () => {
     expect(component.find('textarea').prop('value')).toEqual('new comment');

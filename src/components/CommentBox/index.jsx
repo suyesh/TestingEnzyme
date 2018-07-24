@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { saveComment, fetchComments } from 'actions'
+import requireAuth from 'components/requireAuth'
 
 class CommentBox extends Component {
   state = {
@@ -38,4 +39,4 @@ const actions = {
   fetchComments
 }
 
-export default connect(null, actions)(CommentBox)
+export default connect(null, actions)(requireAuth(CommentBox));
