@@ -5,7 +5,11 @@ export default (state = [], action) => {
      case SAVE_COMMENT:
        return [...state, action.payload ]
      case FETCH_COMMENTS:
-       return [...state, ...action.payload.data.map(comment => comment.name)]
+       if (!action.error) {
+         return [...state, ...action.payload.map(comment => comment.name)]
+      } else {
+        return state
+      }
      default:
        return state;
    }

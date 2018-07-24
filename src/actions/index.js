@@ -12,6 +12,6 @@ export const fetchComments = () => {
   const request = axios.get('http://jsonplaceholder.typicode.com/comments');
   return {
     type: FETCH_COMMENTS,
-    payload: request
+    payload: request,
   }
 }
